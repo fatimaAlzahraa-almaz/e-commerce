@@ -23,7 +23,7 @@ const ErrorNotification = () => {
     return () => clearInterval(timer);
   }, []);
   return (
-    <div className="fixed w-screen h-screen top-0 left-0 bg-gray-800/20 backdrop-blur-sm z-100 flex items-center justify-center">
+    <div className="fixed w-screen h-screen top-0 left-0 bg-gray-800/20 backdrop-blur-sm z-102 flex items-center justify-center">
       <div className="flex flex-col border border-gray-300 w-50 sm:w-70 px-3 sm:px-5  py-8 pb-10 justify-center items-center rounded-xl gap-1 relative bg-white ">
         <IoMdClose className="w-10 h-10 text-red-600 mb-2" />
 
