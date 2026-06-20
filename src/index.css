@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@import 'tailwind-scrollbar-hide/v4';
+html{
+  padding:0;
+  margin:0;
+  font-family:'Outfit', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+ 
+ 
+ 
