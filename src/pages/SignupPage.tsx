@@ -30,7 +30,7 @@ const SignupPage = () => {
   });
   type loginTypevalues = z.infer<typeof loginSchema>;
 
-  const onSubmit: SubmitHandler<loginTypevalues> = async (data) => {
+  const onSubmit: SubmitHandler<loginTypevalues> = async (data:loginTypevalues) => {
      setLoading(true);
   try{
     setErr('');

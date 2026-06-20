@@ -29,7 +29,7 @@ const CheckoutPage = () => {
      country:z.string().min(1,'Country is required'),
    });
    type loginTypevalues=z.infer<typeof loginSchema>;
-   const onSubmit:SubmitHandler<loginTypevalues>=async(data)=>{
+   const onSubmit:SubmitHandler<loginTypevalues>=async(data:loginTypevalues)=>{
      setLoading(true);
     try{ 
       
@@ -62,7 +62,7 @@ const CheckoutPage = () => {
    const handleShippingMethodClick=(method:string)=>{
          setShippingMethod(method);
    }
-   console.log(errors)
+  
   return (
     <div className="mt-18 flex flex-col sm:flex-row gap-8  w-full px-2 sm:px-4 py-10 justify-center min-h-[80vh]">
       <form className="border border-gray-300  rounded-2xl flex flex-col gap-8 py-6 px-4 w-full sm:px-8 sm:max-w-150 "  onSubmit={handleSubmit(onSubmit)}>

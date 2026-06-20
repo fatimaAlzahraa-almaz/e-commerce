@@ -19,7 +19,7 @@ const SigninPage = () => {
     password: z.string().min(1, "Password is required"),
   });
   type loginTypevalues = z.infer<typeof loginSchema>;
-  const onSubmit: SubmitHandler<loginTypevalues> = async (data) => {
+  const onSubmit: SubmitHandler<loginTypevalues> = async (data:loginTypevalues) => {
      try{
       setErr('');
       setLoading(true);
