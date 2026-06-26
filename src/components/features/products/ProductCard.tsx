@@ -90,8 +90,14 @@ const ProductCard = ({ product }: { product: Product }) => {
   }, [user, product,favorites,cart]);
   return (
     <motion.div
-      initial={{ y: 0 }}
+      initial={{ y: 60 ,opacity:0}}
       whileHover={{ y: -10 }}
+      whileInView={{opacity:1,y:0}}
+      transition={{
+        opacity:{delay:0.2},
+        y:{delay:0}
+      }}
+      viewport={{once:true}}
       className="flex flex-col bg-white aspect-2/3  w-full max-w-70 gap-1 rounded-xl p-2 sm:p-3 text-gray-600 border border-gray-200  relative "
     >
       <div

@@ -26,7 +26,7 @@ const SignupPage = () => {
       .string()
       .min(1, "Password is required")
       .min(8, "Enter at least 8 charecters"),
-    address: z.string().min(1, "Full Address"),
+    address: z.string().min(1, "Address is required"),
   });
   type loginTypevalues = z.infer<typeof loginSchema>;
 
@@ -36,7 +36,7 @@ const SignupPage = () => {
     setErr('');
     await signUp(data.email,data.password);
     await addToUserDetails(data);
-    navigate('/signIn')
+    navigate('/signIn');
   } catch(err){
     setErr(String(err));
   } finally{

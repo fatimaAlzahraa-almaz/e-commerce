@@ -2,6 +2,7 @@ import { PiClockCountdown } from "react-icons/pi";
 import { RiCustomerServiceLine } from "react-icons/ri";
 import { SlPaperPlane } from "react-icons/sl";
 import SpecificationCard from "./SpecificationCard";
+import {motion} from  'motion/react'
 const cardItems = [
   {
     icon: (
@@ -36,7 +37,12 @@ const cardItems = [
 ];
 const SpecificationSection = () => {
   return (
-    <div className="flex flex-col items-center  gap-20 px-2 sm:px-5 py-20 relative ">
+    <motion.div
+    initial={{y:20,opacity:0}}
+    whileInView={{y:0,opacity:1}}
+    transition={{duration:0.5,delay:0.2}}
+    viewport={{once:true}}
+    className="flex flex-col items-center  gap-20 px-1 sm:px-5 py-20 relative mx-2">
       <div className="flex flex-col items-center gap-2 max-w-150 justify-center relative p-2 ">
         <div className="absolute w-2/3  h-[150%] left-1/2 -translate-x-1/2 bg-green-200/80 rounded-full blur-2xl -z-1 "></div>
         <p className="text-2xl font-semibold text-gray-700 text-center">
@@ -60,7 +66,7 @@ const SpecificationSection = () => {
           />
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

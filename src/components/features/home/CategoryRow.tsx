@@ -32,13 +32,13 @@ const CategoryRow = () => {
     <div className="w-full  flex  relative ">
       <div
         onClick={handleLeftArrow}
-        className="bg-gray-200/70 absolute z-90 h-9 w-9 flex items-center justify-center rounded-3xl cursor-pointer left-0 top-1/2 -translate-y-1/2 hover:bg-gray-300 xl:hidden"
+        className="bg-gray-200/70 absolute z-90 h-9 w-9 items-center justify-center rounded-3xl cursor-pointer left-0 top-1/2 -translate-y-1/2 hover:bg-gray-300 hidden sm:flex xl:hidden"
       >
         <IoIosArrowBack className="h-5 w-5 fil-gray-600 " />
       </div>
       <div
         onClick={handleRightArrow}
-        className="bg-gray-200/70 absolute z-90 h-9 w-9 flex items-center justify-center rounded-3xl cursor-pointer right-0 top-1/2 -translate-y-1/2 hover:bg-gray-300 xl:hidden"
+        className="bg-gray-200/70 absolute z-90 h-9 w-9 items-center justify-center rounded-3xl cursor-pointer right-0 top-1/2 -translate-y-1/2 hover:bg-gray-300 hidden sm:flex  xl:hidden"
       >
         <IoIosArrowForward className="h-5 w-5 fill-gray-600" />
       </div>

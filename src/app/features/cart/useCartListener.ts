@@ -8,7 +8,10 @@ export const useCartListener=(email:string|undefined)=>{
 
 const dispatch=useAppDispatch();
 useEffect(() => {
-    if (!email) return;
+    if (!email) {
+      dispatch(setCart([]))
+      return;
+    };
     
      const unsubsicribe= onSnapshot(doc(db, "users", email), (doc) => {
         

@@ -26,7 +26,7 @@ export const categoryImg = [
 ];
 
 export const heroCardImgUrl = [
-  "https://elevaremarket.com/cdn/shop/files/Homepage_Top_Banner_Slide_2.webp?v=1771834784&width=1920%201920w",
   "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   "https://asset.action.com/image/upload/t_digital_content_card_small/w_1080/Summer_PersonalCare_CosBeauty_MakeUp_MaxAndMore_2024_uk7pbi.webp",
 ];
+

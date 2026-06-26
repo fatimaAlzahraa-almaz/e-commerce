@@ -6,6 +6,7 @@ import { HiOutlineMail } from "react-icons/hi";
 import { FiPhone } from "react-icons/fi";
 import type { contactType, iconsType } from "./types/types.ts";
 import { footerProducts, footerWebsite } from "./data/data";
+import {motion} from 'motion/react'
 const contact = [
   {
     text: "contact@example.com",
@@ -51,7 +52,12 @@ const Footer = () => {
   return (
     <div className=" flex flex-col gap-4 w-full text-gray-500 text-sm p-2 sm:p-6">
       <div className="flex flex-col md:flex-row gap-4  md:justify-between w-full">
-        <div className="flex flex-col items-start gap-4 sm:w-1/2 md:w-1/3">
+        <motion.div
+        initial={{y:20,opacity:0}}
+        whileInView={{y:0,opacity:1}}
+        transition={{duration:0.5,delay:0.1}}
+        viewport={{once:true}}
+    className="flex flex-col items-start gap-4 sm:w-1/2 md:w-1/3">
           <LogoButton handleClick={handleHomeClick} />
           <p>
             Welcome to gocart, your ultimate destination for the latest and
@@ -69,9 +75,14 @@ const Footer = () => {
               </li>
             ))}
           </ul>
-        </div>
+        </motion.div>
         <div className="flex justify-between   text-sm md:w-1/2 gap-3 flex-wrap">
-          <div className="flex flex-col gap-2">
+          <motion.div
+          initial={{y:20,opacity:0}}
+          whileInView={{y:0,opacity:1}}
+          transition={{duration:0.5,delay:0.2}}
+          viewport={{once:true}}
+          className="flex flex-col gap-2">
             <p className="text-gray-700 font-medium">PRODUCTS</p>
             <div className="flex flex-col gap-1  items-start">
               {footerProducts.map((el: string, i: number) => (
@@ -84,8 +95,13 @@ const Footer = () => {
                 </button>
               ))}
             </div>
-          </div>
-          <div className="flex flex-col gap-2">
+          </motion.div>
+          <motion.div
+          initial={{y:20,opacity:0}}
+          whileInView={{y:0,opacity:1}}
+          transition={{duration:0.5,delay:0.3}}
+           viewport={{once:true}}
+          className="flex flex-col gap-2">
             <p className="text-gray-700 font-medium">WEBSITE</p>
             <div className="flex flex-col gap-1  items-start">
               {footerWebsite.map((el: string, i: number) => (
@@ -98,8 +114,13 @@ const Footer = () => {
                 </button>
               ))}
             </div>
-          </div>
-          <div className="flex flex-col gap-2">
+          </motion.div>
+          <motion.div
+          initial={{y:20,opacity:0}}
+          whileInView={{y:0,opacity:1}}
+          transition={{duration:0.5,delay:0.4}}
+          viewport={{once:true}}
+          className="flex flex-col gap-2">
             <p className="text-gray-700 font-medium">CONTACT</p>
             <div className="flex flex-col gap-1 items-start">
               {contact.map((el: contactType, i: number) => (
@@ -113,12 +134,19 @@ const Footer = () => {
                 </button>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
-      <div className="border-t border-gray-300 py-4">
-        <p>Copyright 2025 © gocart All Right Reserved.</p>
-      </div>
+      <motion.div
+       className="border-t border-gray-300 py-4">
+        <motion.p
+        initial={{y:20,opacity:0}}
+          whileInView={{y:0,opacity:1}}
+          transition={{duration:0.5,delay:0.3}}
+          viewport={{once:true}}
+        >
+          Copyright 2025 © gocart All Right Reserved.</motion.p>
+      </motion.div>
     </div>
   );
 };

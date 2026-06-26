@@ -8,7 +8,10 @@ export const useFavoritesListener=(email:string|undefined)=>{
 
 const dispatch=useAppDispatch();
 useEffect(() => {
-    if (!email) return;
+    if (!email) {
+      dispatch(setFavorites([]));
+      return;
+    };
     
      const unsubsicribe= onSnapshot(doc(db, "users", email), (doc) => {
         

@@ -4,6 +4,7 @@ import type { Product } from "./types/type";
 import { FaArrowRight } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 import LoadingProductCard from "../loading/LoadingProductCard";
+import {motion} from 'motion/react'
 const ProductsHomeRow = ({
   title,
   order,
@@ -28,7 +29,12 @@ const ProductsHomeRow = ({
     navigate(`/products?skip=0&order=${order}&sortBy=${sort}`);
   };
   return (
-    <div className="flex flex-col gap-8 items-center px-2 sm:px-4 py-6 ">
+    <motion.div
+    initial={{y:20,opacity:0}}
+    whileInView={{y:0,opacity:1}}
+    transition={{duration:1,delay:0.2}}
+    viewport={{once:true}}
+    className="flex flex-col gap-8 items-center px-2 sm:px-4 py-6 ">
       <div className="flex gap-4 sm:gap-8 flex-wrap relative">
         <p className="font-semibold  text-2xl text-gray-700">{title}</p>
         <button
@@ -49,7 +55,7 @@ const ProductsHomeRow = ({
                 i < 4 && <ProductCard product={el} key={i} />,
             )}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
