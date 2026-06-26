@@ -12,7 +12,11 @@ const SignupPage = () => {
   const[loading,setLoading]=useState<boolean>(false);
   const navigate = useNavigate();
   const{signUp,addToUserDetails}=UserAuth();
+  const scroll = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   const handleClick = () => {
+    scroll();
     navigate('/signin')
   };
   const loginSchema = z.object({
@@ -36,6 +40,7 @@ const SignupPage = () => {
     setErr('');
     await signUp(data.email,data.password);
     await addToUserDetails(data);
+    scroll();
     navigate('/signIn');
   } catch(err){
     setErr(String(err));

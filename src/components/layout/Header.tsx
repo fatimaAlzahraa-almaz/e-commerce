@@ -24,22 +24,29 @@ const Header = () => {
   const{logOut,resetAll}=UserAuth();
   const cartCount=useAppSelector(cartCounterSelector);
   const favoritesCount=useAppSelector(favoritesCountSelector);
-  
+   const scroll = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   const handleLogoClick = () => {
+    scroll();
     navigate("/");
   };
   const handleWishlistClick = () => {
+    scroll();
     navigate("/wishlist");
   };
   const handleCartClick = () => {
+      scroll();
     navigate("/cart");
   };
   const handleSigninClick = () => {
     setVisibleUserMenu(false);
+    scroll();
     navigate("/signin");
   };
   const handleSignupClick = () => {
     setVisibleUserMenu(false);
+    scroll();
     navigate("/signup");
   };
   const handleLogOutClick = async() => {
@@ -47,6 +54,7 @@ const Header = () => {
       resetAll();
      await logOut();
     setVisibleUserMenu(false);
+    scroll();
     navigate("/signin");
     }catch(err){
       dispatch(setError(true));
@@ -55,10 +63,12 @@ const Header = () => {
   };
   const handleFormSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
+    scroll();
     navigate(`/search?q=${q}`);
     setVisibleSearchBar(false);
     setQ("");
   };
+  
   return (
     <div className=" fixed top-0 right-0 left-0 w-full flex border-b border-gray-200 bg-white/99  justify-between px-2 pr-5 sm:px-4 md:px-10 h-18 items-center  z-101 backdrop-blur-2xl">
       {(visibleUserMenu || visibleSearchBar) && (

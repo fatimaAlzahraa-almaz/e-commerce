@@ -11,7 +11,11 @@ const SigninPage = () => {
   const[loading,setLoading]=useState<boolean>(false);
   const navigate = useNavigate();
   const{logIn}=UserAuth();
+  const scroll = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   const handleClick = () => {
+    scroll();
     navigate("/signup");
   };
   const loginSchema = z.object({
